@@ -5,13 +5,32 @@
 
 //1st soln O(n^2)
 
-var numIdenticalPairs = function(nums) {
-    let count=0;
-    for(i=0;i<nums.length-1;i++){
-        for(j=i+1;j<nums.length;j++){
-            if(nums[i]===nums[j]) count++;
+var numIdenticalPairs = function (nums) {
+    let count = 0;
+    for (i = 0; i < nums.length - 1; i++) {
+        for (j = i + 1; j < nums.length; j++) {
+            if (nums[i] === nums[j]) count++;
         }
     }
 
     return count;
 };
+
+//2nd soln O(n)
+
+var numIdenticalPairs = function (nums) {
+
+    let count = 0;
+    let countMap = {};
+
+    for (let i = 0; i < nums.length; i++) {
+        if (countMap[nums[i]]) {
+            count += countMap[nums[i]];
+            countMap[nums[i]]++;
+        } else {
+            countMap[nums[i]] = 1;
+        }
+    }
+
+    return count;
+}
