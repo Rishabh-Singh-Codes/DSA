@@ -34,3 +34,23 @@ var numIdenticalPairs = function (nums) {
 
     return count;
 }
+
+//Prac1
+
+let numIdenticalPairs = (nums) => {
+    let count = 0;
+    let map ={};
+
+    nums.forEach((num)=> {
+        if(map[num]) {
+            count+=map[num];
+            map[num]++;
+        }
+
+        else {
+            map[num] = 1;
+        }
+    })
+
+    return count;
+}
