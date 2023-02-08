@@ -3,7 +3,7 @@
 
 // Link: https://leetcode.com/problems/count-the-number-of-consistent-strings/description/
 
-//1st soln O(n)
+//1st soln O(n^2)
 
 var countConsistentStrings = function(allowed, words) {
     let count = 0;
@@ -21,6 +21,19 @@ var countConsistentStrings = function(allowed, words) {
         if (wordLen === wordCount) {
             count++;
         }
+    }
+
+    return count;
+};
+
+
+//2nd soln O(n) w/ help
+
+var countConsistentStrings = function(allowed, words) {
+    let count = 0;
+
+    for(let word of words) {
+        if(word.split("").every(letter => allowed.includes(letter))) count++;
     }
 
     return count;
