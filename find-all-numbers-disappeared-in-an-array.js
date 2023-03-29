@@ -2,7 +2,7 @@
 
 // Link: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
 
-//1st soln O(n)
+//1st soln O(n) w/ help
 
 var findDisappearedNumbers = function(nums) {
     let map = {};
