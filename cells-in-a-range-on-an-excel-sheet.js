@@ -7,7 +7,7 @@
 
 // Link: https://leetcode.com/problems/cells-in-a-range-on-an-excel-sheet/description/
 
-//1st soln O(n)
+//1st soln O(n^2)
 
 var cellsInRange = function(s) {
     let res = [];
