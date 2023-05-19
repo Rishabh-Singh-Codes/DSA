@@ -3,7 +3,7 @@
 
 // Link: https://leetcode.com/problems/sort-array-by-increasing-frequency/description/
 
-//1st soln O(n)
+//1st soln O(n^2)
 
 var frequencySort = function(nums) {
     let map = {};
