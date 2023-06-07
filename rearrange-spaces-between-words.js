@@ -19,7 +19,7 @@ var reorderSpaces = function(text) {
     for(let i = 0; i < words.length; i++) {
         res += words[i];
         let currSpace = equalSpaces;
-        if(i !== words.length - 1) {
+        if(i !== words.length - 1) { 
             while(currSpace > 0) {
                 res += " ";
                 currSpace--;
