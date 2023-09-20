@@ -3,7 +3,7 @@
 
 // Link: https://leetcode.com/problems/is-subsequence/description/
 
-//1st soln O(n^2) w/ help
+//1st soln O(n)
 
 var isSubsequence = function(s, t) {
     let index = 0;
@@ -16,7 +16,6 @@ var isSubsequence = function(s, t) {
             searchChar = s[index];
             cnt++;
         }
-
     }
 
     if(cnt === s.length) {
