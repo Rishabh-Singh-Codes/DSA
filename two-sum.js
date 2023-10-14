@@ -19,3 +19,34 @@ var twoSum = function(nums, target) {
 
     return res;
 };
+
+// 2nd soln O(n)
+
+var twoSum = function(nums, target) {
+    let res = [];
+
+    for(let i = 0; i < nums.length; i++) {
+        let idx = nums.slice(i+1).indexOf(target-nums[i])
+        if(idx >= 0) {
+            res = [i, idx+i+1];
+            break;
+        }
+    }
+
+    return res;
+};
+
+// 2rd soln O(n) w/ help
+
+var twoSum = function(nums, target) {
+    let map = {};
+
+    for(let i = 0; i < nums.length; i++) {
+        if(map[target - nums[i]] !== undefined) {
+            return [map[target - nums[i]], i];
+        } else {
+            map[nums[i]] = i
+        }
+    }
+
+};
