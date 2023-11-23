@@ -2,7 +2,7 @@
 
 // Link: https://leetcode.com/problems/sum-of-square-numbers/description/
 
-//1st soln O(n)
+//1st soln O(n) w/ help
 
 var judgeSquareSum = function(c) {
     if(c === 0) {
