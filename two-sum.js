@@ -36,7 +36,7 @@ var twoSum = function(nums, target) {
     return res;
 };
 
-// 2rd soln O(n) w/ help
+// 3rd soln O(n) w/ help
 
 var twoSum = function(nums, target) {
     let map = {};
@@ -49,4 +49,25 @@ var twoSum = function(nums, target) {
         }
     }
 
+};
+
+// 4th soln O(n)
+
+var twoSum = function(nums, target) {
+    let map = {};
+    let res = [];
+
+    for(let i = 0; i < nums.length; i++) {
+        map[nums[i]] = i;
+    }
+
+    for(let i = 0; i < nums.length; i++) {
+        if(map[target - nums[i]] !== undefined && i !== map[target - nums[i]]) {
+            res[1] = i;
+            res[0] = map[target - nums[i]];
+            break;
+        }
+    }
+
+    return res;
 };
