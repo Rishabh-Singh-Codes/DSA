@@ -22,3 +22,27 @@ var sumOfUnique = function(nums) {
 
     return sum;
 };
+
+
+//2nd soln O(n)
+var sumOfUnique = function(nums) {
+    let map = {};
+    let sum = 0;
+
+    for(let i = 0; i < nums.length; i++) {
+       if(map[nums[i]]) {
+           map[nums[i]] += 1;
+       } else {
+           map[nums[i]] = 1;
+       }
+    }
+
+    for(let num in map) {
+        if(map[num] === 1) {
+            sum += +num;
+        }
+    }
+
+    return sum;
+
+};
