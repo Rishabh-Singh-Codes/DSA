@@ -26,3 +26,20 @@ var divideArray = function(nums) {
 
     return true;
 };
+
+//2nd soln O(n)
+var divideArray = function(nums) {
+    let map = {};
+
+    for(let num of nums) {
+        map[num] = (map[num] || 0) + 1;
+    }
+
+    for(let occ in map) {
+        if(map[occ] % 2 !== 0) {
+            return false;
+        }
+    }
+
+    return true;
+};
