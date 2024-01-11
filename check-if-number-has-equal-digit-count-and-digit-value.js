@@ -19,3 +19,24 @@ var digitCount = function(num) {
 
     return true;
 };
+
+// 2nd soln Object(n)
+
+var digitCount = function(num) {
+    let map = new Map();
+
+    for(let n of num) {
+        map.set(n, (map.get(n) || 0) + 1);
+    }
+
+    let idx = 0;
+    for(let n of num) {
+        if((map.get(String(idx)) || 0) != n) {
+            return false;
+        }
+
+        idx++;
+    }
+
+    return true;
+};
