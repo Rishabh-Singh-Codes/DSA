@@ -9,7 +9,7 @@
 
 // Link: https://leetcode.com/problems/find-players-with-zero-or-one-losses/description/
 
-//1st soln O(n)
+//1st soln O(nlogn)
 
 var findWinners = function(matches) {
     let win = {};
@@ -48,6 +48,33 @@ var findWinners = function(matches) {
     oneLoss.sort((a, b) => a - b);
 
     let res = [noLoss, oneLoss];
+
+    return res;
+};
+
+//2nd soln O(n)
+var findWinners = function(matches) {
+    let wS = {};
+    let lS = {};
+
+    for(const match of matches) {
+        wS[match[0]] = (wS[match[0]] || 0) + 1;
+        lS[match[1]] = (lS[match[1]] || 0) + 1;
+    }
+
+    let res = [[], []];
+
+    for(const w in wS) {
+        if(lS[w] === undefined) {
+          res[0].push(w);  
+        }
+    }
+
+    for(const l in lS) {
+        if(lS[l] === 1) {
+          res[1].push(l);  
+        }
+    }
 
     return res;
 };
