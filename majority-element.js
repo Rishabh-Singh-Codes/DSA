@@ -21,3 +21,25 @@ var majorityElement = function(nums) {
 
     return res;
 };
+
+
+//2nd soln O(n)
+
+var majorityElement = function(nums) {
+    if(nums.length === 1) {
+        return nums[0];
+    }
+
+    let map = new Map();
+
+    for(const num of nums) {
+        if(map.has(num)) {
+            map.set(num, map.get(num) + 1);
+            if(map.get(num) > nums.length/2) {
+                return num;
+            }
+        } else {
+            map.set(num, 1);
+        }
+    }
+};
