@@ -41,3 +41,47 @@ var twoOutOfThree = function(nums1, nums2, nums3) {
 
     return res;
 };
+
+// attempt 1
+
+var twoOutOfThree = function(nums1, nums2, nums3) {
+    const arr1 = Array.from(new Set(nums1));
+    const arr2 = Array.from(new Set(nums2));
+    const arr3 = Array.from(new Set(nums3));
+
+    let len;
+
+    if(arr1.length > arr2.length) {
+        arr1.length > arr3.length ? len = arr1.length : len = arr3.length;
+    } else {
+        arr2.length > arr3.length ? len = arr2.length : len = arr3.length;
+    }
+
+    let map = new Map();
+
+    for(let i = 0; i < len; i++) {
+        if(arr1[i] !== undefined) {
+            map.set(arr1[i], ((map.get(arr1[i]) || 0) + 1));
+        }
+
+        if(arr2[i] !== undefined) {
+            map.set(arr2[i], (map.get(arr2[i] || 0) + 1));
+        }
+
+        if(arr3[i] !== undefined) {
+            map.set(arr3[i], (map.get(arr3[i] || 0) + 1));
+        }
+    }
+
+    console.log(map)
+
+    let res = [];
+
+    for(let [key, val] of map) {
+        if(val >= 2) {
+            res.push(key);
+        }
+    }
+
+    return res;
+};
