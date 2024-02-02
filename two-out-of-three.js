@@ -42,7 +42,7 @@ var twoOutOfThree = function(nums1, nums2, nums3) {
     return res;
 };
 
-// attempt 1
+// 2nd soln O(n)
 
 var twoOutOfThree = function(nums1, nums2, nums3) {
     const arr1 = Array.from(new Set(nums1));
@@ -65,15 +65,13 @@ var twoOutOfThree = function(nums1, nums2, nums3) {
         }
 
         if(arr2[i] !== undefined) {
-            map.set(arr2[i], (map.get(arr2[i] || 0) + 1));
+            map.set(arr2[i], (map.get(arr2[i]) || 0) + 1);
         }
 
         if(arr3[i] !== undefined) {
-            map.set(arr3[i], (map.get(arr3[i] || 0) + 1));
+            map.set(arr3[i], (map.get(arr3[i]) || 0) + 1);
         }
     }
-
-    console.log(map)
 
     let res = [];
 
