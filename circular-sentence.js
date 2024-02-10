@@ -27,3 +27,25 @@ var isCircularSentence = function(sentence) {
 
     return true;
 };
+
+// 2nd soln O(n)
+
+var isCircularSentence = function(sentence) {
+    if(sentence[0] !== sentence.at(-1)) {
+        return false;
+    }
+
+    const words = sentence.split(" ");
+
+    if(words.length === 1) {
+        return true;
+    }
+
+    for(let i = 1; i < words.length; i++) {
+        if(words[i][0] !== words[i-1][words[i-1].length - 1]) {
+            return false;
+        }
+    }
+
+    return true;
+};
