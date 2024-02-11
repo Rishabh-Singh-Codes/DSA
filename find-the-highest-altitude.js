@@ -15,3 +15,20 @@ var largestAltitude = function(gain) {
 
     return max;
 };
+
+// 2nd soln
+
+var largestAltitude = function(gain) {
+    let max = Number.MIN_VALUE;
+
+    let curr = 0;
+
+    for(let num of gain) {
+        curr += num;
+        if(curr > max) {
+            max = curr;
+        }
+    }
+
+    return max;
+};
