@@ -31,3 +31,15 @@ var replaceElements = function(arr) {
     return arr;
     
 };
+
+//3rd soln
+
+var replaceElements = function(arr) {
+    let res = [-1];
+    
+    for(let i = arr.length - 1; i > 0; i--) {
+        res.unshift(Math.max(res[0], arr[i]));
+    }
+
+    return res;
+};
