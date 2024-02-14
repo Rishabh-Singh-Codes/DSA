@@ -19,3 +19,27 @@ var diagonalSum = function(mat) {
     }
     return sum;
 };
+
+
+//2nd soln O(n)
+
+var diagonalSum = function(mat) {
+    const len = mat.length;
+    
+    if(len === 1) {
+        return mat[0][0];
+    }
+
+    let sum = 0;
+
+    for(let i = 0; i < len; i++) {
+        sum += (mat[i][i] + mat[i][len-i-1]);
+    }
+
+    if(len % 2 !== 0) {
+        const idx = Math.floor(len/2);
+        sum -= mat[idx][idx];
+    }
+
+    return sum;
+};
