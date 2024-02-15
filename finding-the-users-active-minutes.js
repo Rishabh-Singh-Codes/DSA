@@ -33,3 +33,28 @@ var findingUsersActiveMinutes = function(logs, k) {
     return res;
 
 };
+
+
+//2nd soln O(n)
+
+var findingUsersActiveMinutes = function(logs, k) {
+    let map = {};
+
+    logs.forEach(log => {
+        if(map[log[0]] !== undefined) {
+            if(!map[log[0]].includes(log[1])) {
+                map[log[0]].push(log[1]);
+            }
+        } else {
+            map[log[0]] = [log[1]];
+        }
+    });
+
+    let res = new Array(k).fill(0);
+
+    for(let user in map) {
+        res[map[user].length - 1] += 1;
+    }
+
+    return res;
+};
