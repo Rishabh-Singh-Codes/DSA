@@ -21,3 +21,18 @@ var sortPeople = function(names, heights) {
 
     return finalArr.reverse();
 };
+
+
+//2nd soln O(n)
+
+var sortPeople = function(names, heights) {
+    let map = {};
+
+    for(let i = 0; i < names.length; i++) {
+        map[i] = heights[i];
+    }
+
+    let order = Object.keys(map).sort((a, b) => map[b] - map[a]).map(el => names[el]);
+
+    return order;
+};
