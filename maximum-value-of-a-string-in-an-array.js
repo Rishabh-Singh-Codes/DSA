@@ -16,3 +16,20 @@ var maximumValue = function(strs) {
     }
     return max;
 };
+
+
+// 2nd soln
+
+var maximumValue = function(strs) {
+    let max = 0;
+
+    strs.forEach((str) => {
+        if(!isNaN(+str)) {
+            max = Math.max(max, +str);
+        } else {
+            max = Math.max(max, str.length);
+        }
+    });
+
+    return max;
+};
