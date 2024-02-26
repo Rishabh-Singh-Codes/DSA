@@ -30,3 +30,20 @@ var rowAndMaximumOnes = function(mat) {
 
     return res;
 };
+
+
+//2nd soln O(n^2)
+
+var rowAndMaximumOnes = function(mat) {
+    let max = [Infinity, -Infinity];
+
+    mat.forEach((row, idx) => {
+        let curr = 0;
+        row.forEach((el) => el === 1 ? curr++: null);
+        if(curr > max[1]) {
+            max = [idx, curr];
+        }
+    });
+
+    return max;
+};
