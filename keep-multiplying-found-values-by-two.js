@@ -5,7 +5,7 @@
 // Repeat this process with the new number as long as you keep finding the number.
 // Return the final value of original.
 
-// Link: https://leetcode.com/problems/word-pattern/description/
+// Link: https://leetcode.com/problems/keep-multiplying-found-values-by-two/description/
 
 //1st soln O(n)
 
@@ -32,4 +32,15 @@ var findFinalValue = function(nums, original) {
         if(nums.includes(original)) original *= 2;
         else return original;
     } 
+};
+
+
+// Practice 1
+
+var findFinalValue = function(nums, original) {
+    while(nums.includes(original)) {
+        original = original * 2;
+    }
+
+    return original;
 };
