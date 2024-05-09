@@ -20,3 +20,16 @@ var checkPerfectNumber = function(num) {
 
     return sum === 2 * num;
 };
+
+//2nd soln O(n) but close to TLE (1st soln is better)
+
+var checkPerfectNumber = function(num) {
+    let sum = 0;
+    for(let i = 1; i <= num/2; i++) {
+        if(num%i === 0) {
+            sum += i;
+        }
+    }
+
+    return sum === num;
+};
