@@ -21,3 +21,14 @@ var kidsWithCandies = function(candies, extraCandies) {
     
     return result;
 };
+
+//2nd soln O(n)
+
+var kidsWithCandies = function(candies, extraCandies) {
+    const greatest = Array.from(candies).sort((a, b) => b - a)[0];
+
+    let res = [];
+    candies.forEach(candy => res.push(candy+extraCandies >= greatest));
+
+    return res;
+};
